@@ -44,3 +44,16 @@ def rotacionAntihoraria(p, angulo):
     xp = (p[0] * math.cos(ar)) - (p[1] * math.sin(ar))
     yp = (p[0] * math.sin(ar)) + (p[1] * math.cos(ar))
     return [int (xp), int (yp)]
+
+
+def traslacion(p, d):
+    xd = p[0] + d[0]
+    yd = p[1] + d[1]
+    return [xd, yd]
+
+#Pto fijo, p= punto a escalar; escal= a lo que se desea escalar
+def escalapf(ptoFijo, p, escal):
+    p1=[(-ptoFijo[0]+p[0]), (-ptoFijo[1]+p[1])]
+    p1es=[((p1[0])*escal), ((p1[1])*escal)]
+    p1e=[(ptoFijo[0]+p1es[0]), (ptoFijo[1]+p1es[1])]
+    return p1e
