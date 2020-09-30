@@ -51,9 +51,23 @@ def traslacion(p, d):
     yd = p[1] + d[1]
     return [xd, yd]
 
-#Pto fijo, p= punto a escalar; escal= a lo que se desea escalar
+# Pto fijo, p= punto a escalar; escal= a lo que se desea escalar
 def escalapf(ptoFijo, p, escal):
     p1=[(-ptoFijo[0]+p[0]), (-ptoFijo[1]+p[1])]
     p1es=[((p1[0])*escal), ((p1[1])*escal)]
+    p1e=[(ptoFijo[0]+p1es[0]), (ptoFijo[1]+p1es[1])]
+    return p1e
+
+# Pto fijo, p= punto a rotar; o = origen; r= angulo que se desea rotar
+def rotacionpfah(ptoFijo, p, o, r):
+    p1=[(-ptoFijo[0]+p[0]), (-ptoFijo[1]+p[1])]
+    p1es=rotacionHoraria(p1, r)
+    p1e=[(ptoFijo[0]+p1es[0]), (ptoFijo[1]+p1es[1])]
+    return p1e
+
+# Pto fijo, p= punto a rotar;0 = origen; r= angulo al que se desea rotar
+def rotacionpfh(ptoFijo, p, o, r):
+    p1=[(-ptoFijo[0]+p[0]), (-ptoFijo[1]+p[1])]
+    p1es=rotacionAntihoraria(p1, r)
     p1e=[(ptoFijo[0]+p1es[0]), (ptoFijo[1]+p1es[1])]
     return p1e
