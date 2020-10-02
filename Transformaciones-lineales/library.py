@@ -71,3 +71,10 @@ def rotacionpfh(ptoFijo, p, o, r):
     p1es=rotacionAntihoraria(p1, r)
     p1e=[(ptoFijo[0]+p1es[0]), (ptoFijo[1]+p1es[1])]
     return p1e
+
+# r: radio
+def polar_a_cartesiano(r, angulo):
+    ar = math.radians(angulo)
+    x = r * math.cos(ar)
+    y = r * math.sin(ar)
+    return [int(x), int(y)]
